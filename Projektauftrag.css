@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #7a7d6a;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #1a1a1a;
+  background-color: #7a7d6a;
+}
+
+header {
+  background-color: #7a7d6a;
+  text-align: center;
+  padding: 2% 2% 1.5%;
+  border-bottom: 2px solid #555;
+}
+
+header h1 {
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: normal;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+}
+
+nav {
+  background-color: #8a8d7a;
+  text-align: center;
+  padding: 3% 2%;
+  border-bottom: 2px solid #555;
+}
+
+nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 0 1%;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav span {
+  color: #444;
+  font-size: 1.2em;
+}
+
+main {
+  padding: 2% 2% 3%;
+  background-color: #7a7d6a;
+  flex: 1;
+}
+
+.content-row {
+  display: flex;
+  gap: 2%;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.intro-box {
+  background-color: #3d6145;
+  padding: 2% 2.5%;
+  color: #d4d4c8;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.intro-box p + p {
+  margin-top: 1em;
+}
+
+.intro-box ul {
+  margin-top: 2em;
+}
+
+.form-hint {
+  margin-top: 1.5em;
+  color: #d4d4c8;
+}
+
+.ContactsImages {
+  background-color: #3d6145;
+  padding: 1.5%;
+  color: #d4d4c8;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  height: 100%;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+  min-width: 15%;
+}
+
+.photo-box.oval {
+  width: clamp(100px, 12vw, 180px);
+  height: clamp(100px, 12vw, 180px);
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #3d6145;
+  border: 3px solid #1a1a1a;
+}
+
+.photo-box.rect {
+  width: clamp(100px, 12vw, 180px);
+  height: clamp(70px, 8vw, 130px);
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #3d6145;
+  border: 3px solid #1a1a1a;
+}
+
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 20%;
+  min-width: 15%;
+}
+
+.side-box {
+  background-color: #3d6145;
+  padding: 1.5%;
+  color: #d4d4c8;
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  line-height: 1.6;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-top: 3em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.form-group label {
+  color: #d4d4c8;
+  font-size: 0.9em;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: #2e4f36;
+  border: 1px solid #5a7a62;
+  color: #eceee4;
+  padding: 0.5em 0.8em;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #8aaa90;
+}
+
+button[type="submit"] {
+  background-color: #2e4f36;
+  color: #eceee4;
+  border: 1px solid #5a7a62;
+  padding: 0.6em 1.5em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  align-self: flex-start;
+  width: auto;
+}
+
+button[type="submit"]:hover {
+  background-color: #3d6145;
+}
+
+@media (max-width: 768px) {
+  nav a, nav span { font-size: 1.2em; }
+
+  .content-row { flex-direction: column; }
+
+  .photo-column {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .side-column {
+    width: 100%;
+    min-width: unset;
+    flex-direction: row;
+  }
+
+  .intro-box { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 3% 2%; }
+
+  nav a {
+    font-size: 1.2em;
+    display: inline-block;
+    margin: 2% 3%;
+  }
+
+  nav span { font-size: 1.2em; }
+
+  .content-row {
+    flex-direction: column;
+    gap: 4%;
+  }
+
+  .photo-column {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .intro-box {
+    padding: 4% 3%;
+    line-height: 1.8;
+    color: #eceee4;
+  }
+}
+
+@media (max-width: 360px) {
+  nav a { margin: 2% 2%; }
+
+  .photo-column {
+    flex-direction: column;
+    align-items: center;
+  }
+}
