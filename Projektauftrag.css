@@ -120,10 +120,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 70%;
+  gap: 10px;
   min-width: 15%;
 }
-
 .photo-box.oval {
   width: clamp(100px, 12vw, 180px);
   height: clamp(100px, 12vw, 180px);
@@ -145,20 +144,22 @@ main {
 .side-column {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 20px;
   width: 20%;
   min-width: 15%;
+  height: 100%
 }
 
 .side-box {
   background-color: #3d6145;
-  padding: 1.5%;
+  padding: 10px;
   color: #d4d4c8;
   font-size: clamp(0.85rem, 1.3vw, 1rem);
   line-height: 1.6;
   flex: 1;
   width: 100%;
   height: 100%;
+  gap: 20px;
 }
 
 form {
@@ -261,6 +262,71 @@ button[type="submit"]:hover {
     line-height: 1.8;
     color: #eceee4;
   }
+}
+
+@media (max-width: 360px) {
+  nav a { margin: 2% 2%; }
+
+  .photo-column {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  nav a, nav span { font-size: 1.2em; }
+
+  .content-row { flex-direction: column; }
+
+  .photo-column {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .side-column {
+    width: 100%;
+    min-width: unset;
+    flex-direction: row;
+  }
+
+  .intro-box { font-size: 0.95rem; }
+
+  .side-box { height: auto; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 3% 2%; }
+
+  nav a {
+    font-size: 1.2em;
+    display: inline-block;
+    margin: 2% 3%;
+  }
+
+  nav span { font-size: 1.2em; }
+
+  .content-row {
+    flex-direction: column;
+    gap: 4%;
+  }
+
+  .photo-column {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .intro-box {
+    padding: 4% 3%;
+    line-height: 1.8;
+    color: #eceee4;
+  }
+
+  .side-column { flex-direction: column; }
 }
 
 @media (max-width: 360px) {
